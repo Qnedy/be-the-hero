@@ -1,11 +1,11 @@
 const express = require('express');
 
+const OngController = require('./controllers/OngController');
+
 const routes = express.Router();
 
-routes.get('/users', (request, response) => {
-  return response.json({
-    teste: "json com response nodemon",
-  });
-});
+routes.get('/ongs', OngController.index);
+
+routes.post('/ongs', OngController.create);
 
 module.exports = routes;
